@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="IMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="companies" EntityType="IMSModel.company" />
+    <EntitySet Name="configdbs" EntityType="IMSModel.configdb" />
+    <EntitySet Name="configemails" EntityType="IMSModel.configemail" />
+    <EntitySet Name="emailcurrents" EntityType="IMSModel.emailcurrent" />
+    <EntitySet Name="emailerrors" EntityType="IMSModel.emailerror" />
+    <EntitySet Name="emailhistories" EntityType="IMSModel.emailhistory" />
+    <EntitySet Name="frequencies" EntityType="IMSModel.frequency" />
+    <EntitySet Name="jenkinsprojects" EntityType="IMSModel.jenkinsproject" />
+    <EntitySet Name="jenkinsservers" EntityType="IMSModel.jenkinsserver" />
+    <EntitySet Name="jerkinsjobs" EntityType="IMSModel.jerkinsjob" />
+    <EntitySet Name="jerkinsjobhis" EntityType="IMSModel.jerkinsjobhi" />
+    <EntitySet Name="monitors" EntityType="IMSModel.monitor" />
+    <EntitySet Name="monitoritemlastresults" EntityType="IMSModel.monitoritemlastresult" />
+    <EntitySet Name="monitoritemresulthistories" EntityType="IMSModel.monitoritemresulthistory" />
+    <EntitySet Name="projects" EntityType="IMSModel.project" />
+    <EntitySet Name="sysconfigs" EntityType="IMSModel.sysconfig" />
+    <EntitySet Name="monitoritem_his" EntityType="IMSModel.monitoritem_his" />
+    <EntitySet Name="students" EntityType="IMSModel.student" />
+    <EntitySet Name="job_running_list" EntityType="IMSModel.job_running_list" />
+    <EntitySet Name="monitoritems" EntityType="IMSModel.monitoritem" />
+  </EntityContainer>
+  <EntityType Name="company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="companycode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createtime" Type="DateTime" />
+    <Property Name="createby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lastupdatetime" Type="DateTime" />
+    <Property Name="lastupdateby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="configdb">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dbname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="dbcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dbtype" Type="Int32" />
+    <Property Name="companycode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="database" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="configemail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="monitoritemcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="port" Type="Int32" />
+    <Property Name="ssl" Type="Boolean" />
+    <Property Name="account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="emailcurrent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Single" />
+    <Property Name="internaldate" Type="DateTime" />
+    <Property Name="subject" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="bodyhtml" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="bodytext" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="vg" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="createtime" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="emailerror">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Single" />
+    <Property Name="internaldate" Type="DateTime" />
+    <Property Name="subject" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="bodyhtml" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="bodytext" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="vg" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="emailhistory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Single" />
+    <Property Name="internaldate" Type="DateTime" />
+    <Property Name="subject" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="bodyhtml" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="bodytext" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="frequency">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="createtime" Type="DateTime" />
+    <Property Name="createby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lastupdatetime" Type="DateTime" />
+    <Property Name="lastupdateby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="desc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="jenkinsproject">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JenkinsServerId" Type="Int32" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="jenkinsserver">
+    <Key>
+      <PropertyRef Name="JenkinsServerId" />
+    </Key>
+    <Property Name="JenkinsServerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="jerkinsjob">
+    <Key>
+      <PropertyRef Name="JobId" />
+    </Key>
+    <Property Name="JobId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MaxDuration" Type="Int32" />
+    <Property Name="L7MaxDuration" Type="Int32" />
+    <Property Name="BeginTime" Type="DateTime" />
+    <Property Name="IsManualCron" Type="Boolean" />
+    <Property Name="Corn" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PYCorn" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Threshold" Type="Int32" />
+    <Property Name="ProjectId" Type="Int32" />
+    <Property Name="LastUpdateTime" Type="DateTime" />
+    <Property Name="DependenceJobId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DependenceJobName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="jerkinsjobhi">
+    <Key>
+      <PropertyRef Name="JobHisId" />
+    </Key>
+    <Property Name="JobHisId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobId" Type="Int32" />
+    <Property Name="JobName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MaxDuration" Type="Int32" />
+    <Property Name="L7MaxDuration" Type="Int32" />
+    <Property Name="BeginTime" Type="DateTime" />
+    <Property Name="IsManualCron" Type="Boolean" />
+    <Property Name="Corn" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PYCorn" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Threshold" Type="Int32" />
+    <Property Name="ProjectId" Type="Int32" />
+    <Property Name="LastUpdateTime" Type="DateTime" />
+    <Property Name="DependenceJobId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DependenceJobName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="monitor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companycode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="projectcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitorcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="desc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="createtime" Type="DateTime" />
+    <Property Name="createby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lastupdatetime" Type="DateTime" />
+    <Property Name="lastupdateby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="monitoritemlastresult">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companycode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitorgroupcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitorcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitoritemcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="resultvalue" Type="Decimal" />
+    <Property Name="resultdesc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="resultstatus" Type="Int32" />
+    <Property Name="lastupdatetime" Type="DateTime" />
+    <Property Name="nextdatetime" Type="DateTime" />
+    <Property Name="createtime" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="monitoritemresulthistory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companycode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitorgroupcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitorcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitoritemcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="resultvalue" Type="Decimal" />
+    <Property Name="resultdesc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="resultstatus" Type="Int32" />
+    <Property Name="lastscript" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="lastupdatetime" Type="DateTime" />
+    <Property Name="nextdatetime" Type="DateTime" />
+    <Property Name="createtime" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="project">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysconfig">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="groupname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="val" Type="Int32" />
+    <Property Name="desc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="parentcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="monitoritem_his">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companycode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="projectcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitorcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitoritemcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitoritemname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="executesql" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="val" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createtime" Type="DateTime" />
+    <Property Name="createby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lastupdatetime" Type="DateTime" />
+    <Property Name="lastupdateby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="age" Type="Int32" />
+    <Property Name="sex" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="name1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="job_running_list">
+    <Key>
+      <PropertyRef Name="monitor_item_id" />
+    </Key>
+    <Property Name="monitor_item_id" Type="Int32" Nullable="false" />
+    <Property Name="cron" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="execute_sql" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="start_date" Type="DateTime" />
+    <Property Name="end_date" Type="DateTime" />
+    <Property Name="update_flag" Type="Int32" />
+    <Property Name="field2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="monitoritem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companycode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="projectcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitorcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitoritemcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="monitoritemname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="dbtype" Type="Int32" />
+    <Property Name="configdbcode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="daypart" Type="Int32" />
+    <Property Name="dateidformatprefix" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="dateidformat" Type="Int32" />
+    <Property Name="dateidformatsuffix" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="resultformat" Type="Int32" />
+    <Property Name="comparemode" Type="Int32" />
+    <Property Name="comparemodefixedvalue" Type="Decimal" />
+    <Property Name="comparemoderangevalue" Type="Decimal" />
+    <Property Name="comparemodethreshold" Type="Decimal" />
+    <Property Name="enabled" Type="Boolean" />
+    <Property Name="cron" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="enbalefailureretry" Type="Boolean" />
+    <Property Name="failureretryexecuteinterval" Type="Int32" />
+    <Property Name="enablecache" Type="Boolean" />
+    <Property Name="cachetime" Type="Int32" />
+    <Property Name="cachetimedaypart" Type="Int32" />
+    <Property Name="enablereflash" Type="Boolean" />
+    <Property Name="reflashtime" Type="Int32" />
+    <Property Name="reflashdaypart" Type="Int32" />
+    <Property Name="enablesuccessnotify" Type="Boolean" />
+    <Property Name="enablefailurenotify" Type="Boolean" />
+    <Property Name="failureemails" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="successemails" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="executesql" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="createtime" Type="DateTime" />
+    <Property Name="createby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lastupdatetime" Type="DateTime" />
+    <Property Name="lastupdateby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

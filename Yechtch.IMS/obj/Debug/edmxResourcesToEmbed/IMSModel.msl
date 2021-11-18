@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IMSModelStoreContainer" CdmEntityContainer="IMSEntities">
+    <EntitySetMapping Name="companies">
+      <EntityTypeMapping TypeName="IMSModel.company">
+        <MappingFragment StoreEntitySet="company">
+          <ScalarProperty Name="lastupdateby" ColumnName="lastupdateby" />
+          <ScalarProperty Name="lastupdatetime" ColumnName="lastupdatetime" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="companycode" ColumnName="companycode" />
+          <ScalarProperty Name="companyname" ColumnName="companyname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="configdbs">
+      <EntityTypeMapping TypeName="IMSModel.configdb">
+        <MappingFragment StoreEntitySet="configdb">
+          <ScalarProperty Name="database" ColumnName="database" />
+          <ScalarProperty Name="companycode" ColumnName="companycode" />
+          <ScalarProperty Name="dbtype" ColumnName="dbtype" />
+          <ScalarProperty Name="dbcode" ColumnName="dbcode" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="dbname" ColumnName="dbname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="configemails">
+      <EntityTypeMapping TypeName="IMSModel.configemail">
+        <MappingFragment StoreEntitySet="configemail">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="ssl" ColumnName="ssl" />
+          <ScalarProperty Name="port" ColumnName="port" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="monitoritemcode" ColumnName="monitoritemcode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emailcurrents">
+      <EntityTypeMapping TypeName="IMSModel.emailcurrent">
+        <MappingFragment StoreEntitySet="emailcurrent">
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="vg" ColumnName="vg" />
+          <ScalarProperty Name="bodytext" ColumnName="bodytext" />
+          <ScalarProperty Name="bodyhtml" ColumnName="bodyhtml" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="internaldate" ColumnName="internaldate" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emailerrors">
+      <EntityTypeMapping TypeName="IMSModel.emailerror">
+        <MappingFragment StoreEntitySet="emailerror">
+          <ScalarProperty Name="vg" ColumnName="vg" />
+          <ScalarProperty Name="bodytext" ColumnName="bodytext" />
+          <ScalarProperty Name="bodyhtml" ColumnName="bodyhtml" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="internaldate" ColumnName="internaldate" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emailhistories">
+      <EntityTypeMapping TypeName="IMSModel.emailhistory">
+        <MappingFragment StoreEntitySet="emailhistory">
+          <ScalarProperty Name="bodytext" ColumnName="bodytext" />
+          <ScalarProperty Name="bodyhtml" ColumnName="bodyhtml" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="internaldate" ColumnName="internaldate" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="frequencies">
+      <EntityTypeMapping TypeName="IMSModel.frequency">
+        <MappingFragment StoreEntitySet="frequency">
+          <ScalarProperty Name="desc" ColumnName="desc" />
+          <ScalarProperty Name="lastupdateby" ColumnName="lastupdateby" />
+          <ScalarProperty Name="lastupdatetime" ColumnName="lastupdatetime" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="jenkinsprojects">
+      <EntityTypeMapping TypeName="IMSModel.jenkinsproject">
+        <MappingFragment StoreEntitySet="jenkinsproject">
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="JenkinsServerId" ColumnName="JenkinsServerId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="jenkinsservers">
+      <EntityTypeMapping TypeName="IMSModel.jenkinsserver">
+        <MappingFragment StoreEntitySet="jenkinsserver">
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="JenkinsServerId" ColumnName="JenkinsServerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="jerkinsjobs">
+      <EntityTypeMapping TypeName="IMSModel.jerkinsjob">
+        <MappingFragment StoreEntitySet="jerkinsjob">
+          <ScalarProperty Name="DependenceJobName" ColumnName="DependenceJobName" />
+          <ScalarProperty Name="DependenceJobId" ColumnName="DependenceJobId" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Threshold" ColumnName="Threshold" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="PYCorn" ColumnName="PYCorn" />
+          <ScalarProperty Name="Corn" ColumnName="Corn" />
+          <ScalarProperty Name="IsManualCron" ColumnName="IsManualCron" />
+          <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+          <ScalarProperty Name="L7MaxDuration" ColumnName="L7MaxDuration" />
+          <ScalarProperty Name="MaxDuration" ColumnName="MaxDuration" />
+          <ScalarProperty Name="JobName" ColumnName="JobName" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="jerkinsjobhis">
+      <EntityTypeMapping TypeName="IMSModel.jerkinsjobhi">
+        <MappingFragment StoreEntitySet="jerkinsjobhis">
+          <ScalarProperty Name="DependenceJobName" ColumnName="DependenceJobName" />
+          <ScalarProperty Name="DependenceJobId" ColumnName="DependenceJobId" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Threshold" ColumnName="Threshold" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="PYCorn" ColumnName="PYCorn" />
+          <ScalarProperty Name="Corn" ColumnName="Corn" />
+          <ScalarProperty Name="IsManualCron" ColumnName="IsManualCron" />
+          <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+          <ScalarProperty Name="L7MaxDuration" ColumnName="L7MaxDuration" />
+          <ScalarProperty Name="MaxDuration" ColumnName="MaxDuration" />
+          <ScalarProperty Name="JobName" ColumnName="JobName" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="JobHisId" ColumnName="JobHisId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monitors">
+      <EntityTypeMapping TypeName="IMSModel.monitor">
+        <MappingFragment StoreEntitySet="monitor">
+          <ScalarProperty Name="lastupdateby" ColumnName="lastupdateby" />
+          <ScalarProperty Name="lastupdatetime" ColumnName="lastupdatetime" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="desc" ColumnName="desc" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="monitorcode" ColumnName="monitorcode" />
+          <ScalarProperty Name="projectcode" ColumnName="projectcode" />
+          <ScalarProperty Name="companycode" ColumnName="companycode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monitoritemlastresults">
+      <EntityTypeMapping TypeName="IMSModel.monitoritemlastresult">
+        <MappingFragment StoreEntitySet="monitoritemlastresult">
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="nextdatetime" ColumnName="nextdatetime" />
+          <ScalarProperty Name="lastupdatetime" ColumnName="lastupdatetime" />
+          <ScalarProperty Name="resultstatus" ColumnName="resultstatus" />
+          <ScalarProperty Name="resultdesc" ColumnName="resultdesc" />
+          <ScalarProperty Name="resultvalue" ColumnName="resultvalue" />
+          <ScalarProperty Name="monitoritemcode" ColumnName="monitoritemcode" />
+          <ScalarProperty Name="monitorcode" ColumnName="monitorcode" />
+          <ScalarProperty Name="monitorgroupcode" ColumnName="monitorgroupcode" />
+          <ScalarProperty Name="companycode" ColumnName="companycode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monitoritemresulthistories">
+      <EntityTypeMapping TypeName="IMSModel.monitoritemresulthistory">
+        <MappingFragment StoreEntitySet="monitoritemresulthistory">
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="nextdatetime" ColumnName="nextdatetime" />
+          <ScalarProperty Name="lastupdatetime" ColumnName="lastupdatetime" />
+          <ScalarProperty Name="lastscript" ColumnName="lastscript" />
+          <ScalarProperty Name="resultstatus" ColumnName="resultstatus" />
+          <ScalarProperty Name="resultdesc" ColumnName="resultdesc" />
+          <ScalarProperty Name="resultvalue" ColumnName="resultvalue" />
+          <ScalarProperty Name="monitoritemcode" ColumnName="monitoritemcode" />
+          <ScalarProperty Name="monitorcode" ColumnName="monitorcode" />
+          <ScalarProperty Name="monitorgroupcode" ColumnName="monitorgroupcode" />
+          <ScalarProperty Name="companycode" ColumnName="companycode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="projects">
+      <EntityTypeMapping TypeName="IMSModel.project">
+        <MappingFragment StoreEntitySet="project">
+          <ScalarProperty Name="Desc" ColumnName="Desc" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysconfigs">
+      <EntityTypeMapping TypeName="IMSModel.sysconfig">
+        <MappingFragment StoreEntitySet="sysconfig">
+          <ScalarProperty Name="parentcode" ColumnName="parentcode" />
+          <ScalarProperty Name="desc" ColumnName="desc" />
+          <ScalarProperty Name="val" ColumnName="val" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="groupname" ColumnName="groupname" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monitoritem_his">
+      <EntityTypeMapping TypeName="IMSModel.monitoritem_his">
+        <MappingFragment StoreEntitySet="monitoritem_his">
+          <ScalarProperty Name="lastupdateby" ColumnName="lastupdateby" />
+          <ScalarProperty Name="lastupdatetime" ColumnName="lastupdatetime" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="val" ColumnName="val" />
+          <ScalarProperty Name="executesql" ColumnName="executesql" />
+          <ScalarProperty Name="monitoritemname" ColumnName="monitoritemname" />
+          <ScalarProperty Name="monitoritemcode" ColumnName="monitoritemcode" />
+          <ScalarProperty Name="monitorcode" ColumnName="monitorcode" />
+          <ScalarProperty Name="projectcode" ColumnName="projectcode" />
+          <ScalarProperty Name="companycode" ColumnName="companycode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="IMSModel.student">
+        <MappingFragment StoreEntitySet="student">
+          <ScalarProperty Name="name1" ColumnName="name1" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="job_running_list">
+      <EntityTypeMapping TypeName="IMSModel.job_running_list">
+        <MappingFragment StoreEntitySet="job_running_list">
+          <ScalarProperty Name="field2" ColumnName="field2" />
+          <ScalarProperty Name="update_flag" ColumnName="update_flag" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="execute_sql" ColumnName="execute_sql" />
+          <ScalarProperty Name="cron" ColumnName="cron" />
+          <ScalarProperty Name="monitor_item_id" ColumnName="monitor_item_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monitoritems">
+      <EntityTypeMapping TypeName="IMSModel.monitoritem">
+        <MappingFragment StoreEntitySet="monitoritem">
+          <ScalarProperty Name="lastupdateby" ColumnName="lastupdateby" />
+          <ScalarProperty Name="lastupdatetime" ColumnName="lastupdatetime" />
+          <ScalarProperty Name="createby" ColumnName="createby" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="executesql" ColumnName="executesql" />
+          <ScalarProperty Name="successemails" ColumnName="successemails" />
+          <ScalarProperty Name="failureemails" ColumnName="failureemails" />
+          <ScalarProperty Name="enablefailurenotify" ColumnName="enablefailurenotify" />
+          <ScalarProperty Name="enablesuccessnotify" ColumnName="enablesuccessnotify" />
+          <ScalarProperty Name="reflashdaypart" ColumnName="reflashdaypart" />
+          <ScalarProperty Name="reflashtime" ColumnName="reflashtime" />
+          <ScalarProperty Name="enablereflash" ColumnName="enablereflash" />
+          <ScalarProperty Name="cachetimedaypart" ColumnName="cachetimedaypart" />
+          <ScalarProperty Name="cachetime" ColumnName="cachetime" />
+          <ScalarProperty Name="enablecache" ColumnName="enablecache" />
+          <ScalarProperty Name="failureretryexecuteinterval" ColumnName="failureretryexecuteinterval" />
+          <ScalarProperty Name="enbalefailureretry" ColumnName="enbalefailureretry" />
+          <ScalarProperty Name="cron" ColumnName="cron" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="comparemodethreshold" ColumnName="comparemodethreshold" />
+          <ScalarProperty Name="comparemoderangevalue" ColumnName="comparemoderangevalue" />
+          <ScalarProperty Name="comparemodefixedvalue" ColumnName="comparemodefixedvalue" />
+          <ScalarProperty Name="comparemode" ColumnName="comparemode" />
+          <ScalarProperty Name="resultformat" ColumnName="resultformat" />
+          <ScalarProperty Name="dateidformatsuffix" ColumnName="dateidformatsuffix" />
+          <ScalarProperty Name="dateidformat" ColumnName="dateidformat" />
+          <ScalarProperty Name="dateidformatprefix" ColumnName="dateidformatprefix" />
+          <ScalarProperty Name="daypart" ColumnName="daypart" />
+          <ScalarProperty Name="configdbcode" ColumnName="configdbcode" />
+          <ScalarProperty Name="dbtype" ColumnName="dbtype" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="monitoritemname" ColumnName="monitoritemname" />
+          <ScalarProperty Name="monitoritemcode" ColumnName="monitoritemcode" />
+          <ScalarProperty Name="monitorcode" ColumnName="monitorcode" />
+          <ScalarProperty Name="projectcode" ColumnName="projectcode" />
+          <ScalarProperty Name="companycode" ColumnName="companycode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

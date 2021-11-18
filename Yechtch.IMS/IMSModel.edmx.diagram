@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2f97e7560b604a1ca71e8eeed349b95f" Name="Diagram1" ZoomLevel="61">
+        <EntityTypeShape EntityType="IMSModel.company" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IMSModel.configdb" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IMSModel.configemail" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IMSModel.emailcurrent" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IMSModel.emailerror" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IMSModel.emailhistory" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IMSModel.frequency" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IMSModel.jenkinsproject" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IMSModel.jenkinsserver" Width="1.5" PointX="6" PointY="8.875" />
+        <EntityTypeShape EntityType="IMSModel.jerkinsjob" Width="1.5" PointX="8.125" PointY="7.875" />
+        <EntityTypeShape EntityType="IMSModel.jerkinsjobhi" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IMSModel.monitor" Width="1.5" PointX="0.5" PointY="8.625" />
+        <EntityTypeShape EntityType="IMSModel.monitoritemlastresult" Width="2.375" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IMSModel.monitoritemresulthistory" Width="2.875" PointX="2.5" PointY="8.625" />
+        <EntityTypeShape EntityType="IMSModel.project" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IMSModel.sysconfig" Width="1.5" PointX="12.125" PointY="7.75" />
+        <EntityTypeShape EntityType="IMSModel.monitoritem_his" Width="2.5" PointX="6.375" PointY="12.75" />
+        <EntityTypeShape EntityType="IMSModel.student" Width="1.5" PointX="13.375" PointY="4.75" />
+        <EntityTypeShape EntityType="IMSModel.job_running_list" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="IMSModel.monitoritem" Width="1.5" PointX="10.375" PointY="11.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

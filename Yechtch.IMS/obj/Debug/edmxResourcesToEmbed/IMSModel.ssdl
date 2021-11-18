@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IMSModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyname" Type="varchar" MaxLength="50" />
+    <Property Name="companycode" Type="varchar" MaxLength="50" />
+    <Property Name="createtime" Type="datetime" Precision="0" />
+    <Property Name="createby" Type="varchar" MaxLength="20" />
+    <Property Name="lastupdatetime" Type="datetime" Precision="0" />
+    <Property Name="lastupdateby" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="configdb">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dbname" Type="varchar" MaxLength="50" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="255" />
+    <Property Name="url" Type="varchar" MaxLength="255" />
+    <Property Name="dbcode" Type="varchar" MaxLength="50" />
+    <Property Name="dbtype" Type="int" />
+    <Property Name="companycode" Type="varchar" MaxLength="50" />
+    <Property Name="database" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="configemail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="monitoritemcode" Type="char" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="255" />
+    <Property Name="port" Type="int" />
+    <Property Name="ssl" Type="bit" />
+    <Property Name="account" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="emailcurrent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="float" />
+    <Property Name="internaldate" Type="datetime" Precision="0" />
+    <Property Name="subject" Type="varchar" MaxLength="255" />
+    <Property Name="bodyhtml" Type="text" />
+    <Property Name="bodytext" Type="text" />
+    <Property Name="vg" Type="text" />
+    <Property Name="createtime" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="emailerror">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="float" />
+    <Property Name="internaldate" Type="datetime" Precision="0" />
+    <Property Name="subject" Type="varchar" MaxLength="255" />
+    <Property Name="bodyhtml" Type="text" />
+    <Property Name="bodytext" Type="text" />
+    <Property Name="vg" Type="text" />
+  </EntityType>
+  <EntityType Name="emailhistory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="float" />
+    <Property Name="internaldate" Type="datetime" Precision="0" />
+    <Property Name="subject" Type="varchar" MaxLength="255" />
+    <Property Name="bodyhtml" Type="text" />
+    <Property Name="bodytext" Type="text" />
+  </EntityType>
+  <EntityType Name="frequency">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="char" MaxLength="2" />
+    <Property Name="createtime" Type="datetime" Precision="0" />
+    <Property Name="createby" Type="varchar" MaxLength="20" />
+    <Property Name="lastupdatetime" Type="datetime" Precision="0" />
+    <Property Name="lastupdateby" Type="varchar" MaxLength="20" />
+    <Property Name="desc" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="jenkinsproject">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JenkinsServerId" Type="int" />
+    <Property Name="ProjectName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="jenkinsserver">
+    <Key>
+      <PropertyRef Name="JenkinsServerId" />
+    </Key>
+    <Property Name="JenkinsServerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="IP" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="jerkinsjob">
+    <Key>
+      <PropertyRef Name="JobId" />
+    </Key>
+    <Property Name="JobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobName" Type="varchar" MaxLength="200" />
+    <Property Name="MaxDuration" Type="int" />
+    <Property Name="L7MaxDuration" Type="int" />
+    <Property Name="BeginTime" Type="datetime" Precision="0" />
+    <Property Name="IsManualCron" Type="bool" />
+    <Property Name="Corn" Type="varchar" MaxLength="200" />
+    <Property Name="PYCorn" Type="varchar" MaxLength="200" />
+    <Property Name="Duration" Type="int" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="Threshold" Type="int" />
+    <Property Name="ProjectId" Type="int" />
+    <Property Name="LastUpdateTime" Type="datetime" Precision="0" />
+    <Property Name="DependenceJobId" Type="varchar" MaxLength="50" />
+    <Property Name="DependenceJobName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="jerkinsjobhis">
+    <Key>
+      <PropertyRef Name="JobHisId" />
+    </Key>
+    <Property Name="JobHisId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobId" Type="int" />
+    <Property Name="JobName" Type="varchar" MaxLength="200" />
+    <Property Name="MaxDuration" Type="int" />
+    <Property Name="L7MaxDuration" Type="int" />
+    <Property Name="BeginTime" Type="datetime" Precision="0" />
+    <Property Name="IsManualCron" Type="bool" />
+    <Property Name="Corn" Type="varchar" MaxLength="200" />
+    <Property Name="PYCorn" Type="varchar" MaxLength="200" />
+    <Property Name="Duration" Type="int" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="Threshold" Type="int" />
+    <Property Name="ProjectId" Type="int" />
+    <Property Name="LastUpdateTime" Type="datetime" Precision="0" />
+    <Property Name="DependenceJobId" Type="varchar" MaxLength="50" />
+    <Property Name="DependenceJobName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="job_running_list">
+    <Key>
+      <PropertyRef Name="monitor_item_id" />
+    </Key>
+    <Property Name="monitor_item_id" Type="int" Nullable="false" />
+    <Property Name="cron" Type="varchar" MaxLength="100" />
+    <Property Name="execute_sql" Type="varchar" MaxLength="255" />
+    <Property Name="start_date" Type="date" />
+    <Property Name="end_date" Type="date" />
+    <Property Name="update_flag" Type="int" />
+    <Property Name="field2" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="monitor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companycode" Type="varchar" MaxLength="50" />
+    <Property Name="projectcode" Type="varchar" MaxLength="50" />
+    <Property Name="monitorcode" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="desc" Type="varchar" MaxLength="255" />
+    <Property Name="createtime" Type="datetime" Precision="0" />
+    <Property Name="createby" Type="varchar" MaxLength="20" />
+    <Property Name="lastupdatetime" Type="datetime" Precision="0" />
+    <Property Name="lastupdateby" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="monitoritem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companycode" Type="varchar" MaxLength="50" />
+    <Property Name="projectcode" Type="varchar" MaxLength="50" />
+    <Property Name="monitorcode" Type="varchar" MaxLength="50" />
+    <Property Name="monitoritemcode" Type="varchar" MaxLength="50" />
+    <Property Name="monitoritemname" Type="varchar" MaxLength="100" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="dbtype" Type="int" />
+    <Property Name="configdbcode" Type="varchar" MaxLength="255" />
+    <Property Name="daypart" Type="int" />
+    <Property Name="dateidformatprefix" Type="varchar" MaxLength="10" />
+    <Property Name="dateidformat" Type="int" />
+    <Property Name="dateidformatsuffix" Type="varchar" MaxLength="10" />
+    <Property Name="resultformat" Type="int" />
+    <Property Name="comparemode" Type="int" />
+    <Property Name="comparemodefixedvalue" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="comparemoderangevalue" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="comparemodethreshold" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="enabled" Type="bit" />
+    <Property Name="cron" Type="varchar" MaxLength="50" />
+    <Property Name="enbalefailureretry" Type="bit" />
+    <Property Name="failureretryexecuteinterval" Type="int" />
+    <Property Name="enablecache" Type="bit" />
+    <Property Name="cachetime" Type="int" />
+    <Property Name="cachetimedaypart" Type="int" />
+    <Property Name="enablereflash" Type="bit" />
+    <Property Name="reflashtime" Type="int" />
+    <Property Name="reflashdaypart" Type="int" />
+    <Property Name="enablesuccessnotify" Type="bit" />
+    <Property Name="enablefailurenotify" Type="bit" />
+    <Property Name="failureemails" Type="varchar" MaxLength="2000" />
+    <Property Name="successemails" Type="varchar" MaxLength="2000" />
+    <Property Name="executesql" Type="text" />
+    <Property Name="createtime" Type="datetime" Precision="0" />
+    <Property Name="createby" Type="varchar" MaxLength="20" />
+    <Property Name="lastupdatetime" Type="datetime" Precision="0" />
+    <Property Name="lastupdateby" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="monitoritem_his">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companycode" Type="varchar" MaxLength="50" />
+    <Property Name="projectcode" Type="varchar" MaxLength="50" />
+    <Property Name="monitorcode" Type="varchar" MaxLength="50" />
+    <Property Name="monitoritemcode" Type="varchar" MaxLength="50" />
+    <Property Name="monitoritemname" Type="varchar" MaxLength="100" />
+    <Property Name="executesql" Type="text" />
+    <Property Name="val" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="createtime" Type="datetime" Precision="0" />
+    <Property Name="createby" Type="varchar" MaxLength="20" />
+    <Property Name="lastupdatetime" Type="datetime" Precision="0" />
+    <Property Name="lastupdateby" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="monitoritemlastresult">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companycode" Type="char" MaxLength="50" />
+    <Property Name="monitorgroupcode" Type="char" MaxLength="50" />
+    <Property Name="monitorcode" Type="char" MaxLength="50" />
+    <Property Name="monitoritemcode" Type="char" MaxLength="50" />
+    <Property Name="resultvalue" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="resultdesc" Type="varchar" MaxLength="255" />
+    <Property Name="resultstatus" Type="int" />
+    <Property Name="lastupdatetime" Type="datetime" Precision="0" />
+    <Property Name="nextdatetime" Type="datetime" Precision="0" />
+    <Property Name="createtime" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="monitoritemresulthistory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companycode" Type="char" MaxLength="50" />
+    <Property Name="monitorgroupcode" Type="char" MaxLength="50" />
+    <Property Name="monitorcode" Type="char" MaxLength="50" />
+    <Property Name="monitoritemcode" Type="char" MaxLength="50" />
+    <Property Name="resultvalue" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="resultdesc" Type="varchar" MaxLength="255" />
+    <Property Name="resultstatus" Type="int" />
+    <Property Name="lastscript" Type="text" />
+    <Property Name="lastupdatetime" Type="datetime" Precision="0" />
+    <Property Name="nextdatetime" Type="datetime" Precision="0" />
+    <Property Name="createtime" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="project">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyCode" Type="varchar" MaxLength="50" />
+    <Property Name="ProjectCode" Type="varchar" MaxLength="50" />
+    <Property Name="ProjectName" Type="varchar" MaxLength="200" />
+    <Property Name="Desc" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="age" Type="int" />
+    <Property Name="sex" Type="varchar" MaxLength="10" />
+    <Property Name="name1" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysconfig">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="50" />
+    <Property Name="groupname" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="val" Type="int" />
+    <Property Name="desc" Type="varchar" MaxLength="255" />
+    <Property Name="parentcode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="IMSModelStoreContainer">
+    <EntitySet Name="company" EntityType="Self.company" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="configdb" EntityType="Self.configdb" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="configemail" EntityType="Self.configemail" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="emailcurrent" EntityType="Self.emailcurrent" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="emailerror" EntityType="Self.emailerror" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="emailhistory" EntityType="Self.emailhistory" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="frequency" EntityType="Self.frequency" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="jenkinsproject" EntityType="Self.jenkinsproject" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="jenkinsserver" EntityType="Self.jenkinsserver" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="jerkinsjob" EntityType="Self.jerkinsjob" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="jerkinsjobhis" EntityType="Self.jerkinsjobhis" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="job_running_list" EntityType="Self.job_running_list" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="monitor" EntityType="Self.monitor" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="monitoritem" EntityType="Self.monitoritem" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="monitoritem_his" EntityType="Self.monitoritem_his" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="monitoritemlastresult" EntityType="Self.monitoritemlastresult" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="monitoritemresulthistory" EntityType="Self.monitoritemresulthistory" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="project" EntityType="Self.project" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="IMSTest" store:Type="Tables" />
+    <EntitySet Name="sysconfig" EntityType="Self.sysconfig" Schema="IMSTest" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
